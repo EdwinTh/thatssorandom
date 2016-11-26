@@ -25,7 +25,7 @@ both directions.}
 A \code{ggplot2} object with the pattern.
 }
 \description{
-Function will generate a random pattern of tiles that can server
+Function will generate a random pattern of tiles that can serve
 as a bathroom design.
 }
 \examples{

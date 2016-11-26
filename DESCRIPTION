@@ -17,3 +17,4 @@ Depends:
     data.table,
     magrittr
 RoxygenNote: 5.0.1
+Suggests: testthat

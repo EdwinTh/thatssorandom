@@ -55,7 +55,7 @@ sample_color <- function(exclude = 0,
 
 #' Make a random bathroom design
 #'
-#' Function will generate a random pattern of tiles that can server
+#' Function will generate a random pattern of tiles that can serve
 #' as a bathroom design.
 #' @param colors character vector with the colors to use.
 #' @param nr_of_each_col prevalence of each color in \code{colors}, should
@@ -64,7 +64,7 @@ sample_color <- function(exclude = 0,
 #' @param nr_width nr of tiles in horizontal directions.
 #' @param max_adjacent maximum nr of adjacent tiles of the same color in
 #' both directions.
-#' @seealso https://edwinth.github.io/blog/bathroom-with-r/
+#' @seealso \url{https://edwinth.github.io/blog/bathroom-with-r/}
 #' @return A \code{ggplot2} object with the pattern.
 #' @examples tiles_pattern()
 #'
