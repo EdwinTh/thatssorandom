@@ -31,25 +31,19 @@ col_select <- function(df,
     output$selection_df <- DT::renderDataTable(
       df_head, server = FALSE, selection = list(target = "column")
     )
-    observeEvent(input$done,stopApp(  input$selection_df_columns_selected))
+    observeEvent(input$done, stopApp(  input$selection_df_columns_selected))
   }
 
   cols_selected <- runGadget(ui, server)
 
-  if(ret == 'df_select') {
+  if (ret == "df_select") {
     return( df %>% select(cols_selected) )
   } else {
     df_name <- deparse(substitute(df))
     colnames_selected <-  colnames(df)[cols_selected] %>%
-      paste(collapse = ', ')
+      paste(collapse = ", ")
     rstudioapi::insertText(
-      paste(df_name," %>% select(", colnames_selected, ")", sep = '')
+      paste(df_name, " %>% select(", colnames_selected, ")", sep = "")
     )
   }
 }
-
-
-
-
-
-
