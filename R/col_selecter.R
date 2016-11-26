@@ -11,6 +11,7 @@
 #' @examples
 #' col_select(mtcars)
 #' col_select(mtcars, 'dplyr_code')
+#' @export
 
 col_select <- function(df,
                        ret = c("df_select", "dplyr_code"),
