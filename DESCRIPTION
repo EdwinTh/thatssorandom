@@ -1,0 +1,19 @@
+Package: thatssorandom
+Type: Package
+Title: Contains functions posted on my blog
+Version: 0.1.0
+Author: Edwin Thoen
+Maintainer: Edwin Thoen <edwinthoen@gmail.com>
+Description: This R package contains all the code I used on my blog
+    thats-so-random.com.
+License: MIT + file
+Encoding: UTF-8
+LazyData: true
+Depends:
+    tidyverse,
+    shiny,
+    miniUI,
+    DT,
+    data.table,
+    magrittr
+RoxygenNote: 5.0.1
