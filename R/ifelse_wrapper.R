@@ -42,7 +42,7 @@ ie <- function(...) {
 
   for (i in 1:(length(args) - 1) ) {
     if (substr(args[[i]], 1, 6) != "ifelse") {
-      stop"All but the last argument, need to be i functions.", call. = FALSE)
+      stop("All but the last argument, need to be i functions.", call. = FALSE)
     }
   }
   if (substr(args[[length(args)]], 1, 6) == "ifelse"){
