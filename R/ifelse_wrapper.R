@@ -32,12 +32,14 @@ i <- function(if_stat, then) {
 }
 
 #' @rdname i
+#' @export
 e <- function(else_ret) {
   else_ret <- lazyeval::expr_text(else_ret)
   else_ret
 }
 
 #' @rdname i
+#' @export
 ie <- function(...) {
   args <- list(...)
 
