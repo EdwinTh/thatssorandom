@@ -9,7 +9,7 @@
 #' @param then Value to be returned, when \code{if_stat} is \code{TRUE}.
 #' @param else_ret Value to be returned, when all \code{if_stat}s are
 #' \code{FALSE}.
-#'
+#' @seealso \url{https://edwinth.github.io/blog/ifelse-wrapper/}
 #' @examples
 #' set.seed(0310)
 #' x <- runif(1000, 1, 20)
@@ -24,6 +24,7 @@
 #'   i(y < 15,          'G'),
 #'   e('H')
 #' )
+#' @export
 i <- function(if_stat, then) {
   if_stat <- lazyeval::expr_text(if_stat)
   then    <- lazyeval::expr_text(then)

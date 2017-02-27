@@ -35,4 +35,3 @@ tiles_pattern()
 \seealso{
 \url{https://edwinth.github.io/blog/bathroom-with-r/}
 }
-

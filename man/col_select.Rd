@@ -26,4 +26,3 @@ col_select(mtcars, 'dplyr_code')
 \seealso{
 \url{https://edwinth.github.io/blog/column-selecter/}
 }
-

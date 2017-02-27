@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: Edwin Thoen
 Maintainer: Edwin Thoen <edwinthoen@gmail.com>
 Description: This R package contains all the code I used on my blog
-    thats-so-random.com.
+    thats-so-random.com. These functions are usually built to explore an idea and are typically not properly tested. It is therefore not advised to use them is serious applications. Rather, use them as inspiration.
 License: MIT + file
 Encoding: UTF-8
 LazyData: true
@@ -16,6 +16,8 @@ Depends:
     miniUI,
     DT,
     data.table,
-    magrittr
-RoxygenNote: 5.0.1
+    magrittr,
+    rpart,
+    pROC
+RoxygenNote: 6.0.1
 Suggests: testthat
