@@ -54,7 +54,7 @@ sample_color <- function(exclude = 0,
   return(return_list)
 }
 
-#' Make a random bathroom design
+#' Make a Random Bathroom Design
 #'
 #' Function will generate a random pattern of tiles that can serve
 #' as a bathroom design.

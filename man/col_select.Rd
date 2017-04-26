@@ -2,7 +2,7 @@
 % Please edit documentation in R/col_selecter.R
 \name{col_select}
 \alias{col_select}
-\title{Select columnst from a data frame.}
+\title{Select Columns from a Dataframe}
 \usage{
 col_select(df, ret = c("df_select", "dplyr_code"), top_n = 100)
 }

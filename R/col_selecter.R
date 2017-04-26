@@ -1,4 +1,4 @@
-#' Select columnst from a data frame.
+#' Select Columns from a Dataframe
 #'
 #' Shiny gadget that will show the data frame in a miniUI. Select the columns
 #' that should be kept and hit Done.

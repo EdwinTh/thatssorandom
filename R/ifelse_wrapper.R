@@ -1,4 +1,4 @@
-#' Functions that form a wrapper around \code{ifelse}.
+#' Functions that form a Wrapper around \code{ifelse}.
 #'
 #' \code{ifelse} functions can be nested to do a vectorised if then else
 #' evaluation, with multiple if then statements. Although this is functional it

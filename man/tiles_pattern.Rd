@@ -2,7 +2,7 @@
 % Please edit documentation in R/tiles_plot.R
 \name{tiles_pattern}
 \alias{tiles_pattern}
-\title{Make a random bathroom design}
+\title{Make a Random Bathroom Design}
 \usage{
 tiles_pattern(colors = c("darkblue", "cyan3", "lightblue1", "white"),
   nr_of_each_col = rep(40, 4), nr_height = 8, nr_width = 20,

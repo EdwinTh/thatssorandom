@@ -2,7 +2,7 @@
 % Please edit documentation in R/tree-based_kappa.R
 \name{get_kappa}
 \alias{get_kappa}
-\title{Get the tree-based kappa.}
+\title{Get the Tree-Based Kappa}
 \usage{
 get_kappa(x, y, k = 10)
 }

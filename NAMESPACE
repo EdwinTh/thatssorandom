@@ -3,6 +3,7 @@
 export(col_select)
 export(e)
 export(get_kappa)
+export(gg_outlier_bin)
 export(gggini)
 export(i)
 export(ie)

@@ -1,4 +1,4 @@
-#' Make a jitter plot
+#' Make a Jitter Plot
 #'
 #' Plot a numerical predictor agains a binary target.
 #'
@@ -20,7 +20,7 @@ predictor_plot <- function(x, y) {
           axis.ticks.y = element_blank())
 }
 
-#' Make a gini plot
+#' Make a Gini Plot
 #'
 #' Plots the ROC curve and also displays the univariate gini of \code{x}.
 #'
@@ -49,7 +49,7 @@ gggini <- function(x, y) {
     annotate("text", x = 0.8, y = 0.2, label = sprintf("Gini = %s", gini))
 }
 
-#' Get the tree-based kappa.
+#' Get the Tree-Based Kappa
 #'
 #' Split x and y into k folds. For each fold; train a univariate tree and get
 #' the probalities for the hold-out. Then, obtain the optimal split and calculate

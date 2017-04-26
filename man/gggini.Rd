@@ -2,7 +2,7 @@
 % Please edit documentation in R/tree-based_kappa.R
 \name{gggini}
 \alias{gggini}
-\title{Make a gini plot}
+\title{Make a Gini Plot}
 \usage{
 gggini(x, y)
 }

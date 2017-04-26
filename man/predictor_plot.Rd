@@ -2,7 +2,7 @@
 % Please edit documentation in R/tree-based_kappa.R
 \name{predictor_plot}
 \alias{predictor_plot}
-\title{Make a jitter plot}
+\title{Make a Jitter Plot}
 \usage{
 predictor_plot(x, y)
 }

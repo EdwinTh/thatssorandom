@@ -4,7 +4,7 @@
 \alias{i}
 \alias{e}
 \alias{ie}
-\title{Functions that form a wrapper around \code{ifelse}.}
+\title{Functions that form a Wrapper around \code{ifelse}.}
 \usage{
 i(if_stat, then)
 
