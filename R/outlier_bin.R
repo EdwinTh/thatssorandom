@@ -83,7 +83,7 @@ update_tickmarks_ceiling <- function(gg_obj,
                                      max_print) {
   ranges <- suppressMessages(
     ggplot_build(gg_obj)$layout$panel_ranges[[1]])
-  label_to_add <- sprintf("(%s,%s)", round(co, 1), max_print)
+  label_to_add <- sprintf("(%s , %s)", round(co, 1), max_print)
   tick_positions <- ranges$x.major_source
   tick_labels    <- ranges$x.labels
   if (overlap_ceiling(tick_positions, co)) {
@@ -105,7 +105,7 @@ update_tickmarks_floor <- function(gg_obj,
                                    min_print) {
   ranges <- suppressMessages(
     ggplot_build(gg_obj)$layout$panel_ranges[[1]])
-  label_to_add <- sprintf("(%s,%s)", min_print, round(co, 1))
+  label_to_add <- sprintf("(%s , %s)", min_print, round(co, 1))
   tick_positions <- ranges$x.major_source
   tick_labels    <- ranges$x.labels
   if (overlap_floor(tick_positions, co)) {
