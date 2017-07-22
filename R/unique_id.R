@@ -18,8 +18,8 @@ unique_id <- function(x, ...) {
   if (nrow(id_set) == nrow(id_set_dist)) {
     TRUE
   } else {
-    non_unique_ids <- id_set %>% 
-      filter(id_set %>% duplicated) %>% 
+    non_unique_ids <- id_set %>%
+      filter(id_set %>% duplicated()) %>%
       distinct()
     suppressMessages(
       inner_join(non_unique_ids, x) %>% arrange(...)
