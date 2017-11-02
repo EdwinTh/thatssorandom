@@ -35,7 +35,7 @@ ggmm <- function(df,
     x_cat_y_cat(x_q, y_q) %>%
     add_freqs_col()
 
-  plot_return <- mm_plot(plot_set)
+  plot_return <- mm_plot(plot_set, x_q, y_q)
 
   plot_return <- set_alpha(df, plot_return, a_q)
 
@@ -72,7 +72,7 @@ add_freqs_col <- function(df) {
     ungroup()
 }
 
-mm_plot <- function(plot_set) {
+mm_plot <- function(plot_set, x_q, y_q) {
   plot_set %>%
     ggplot(aes(x_cat, freq, width = y_cnt, fill = y_cat, alpha = alpha_ind)) +
     geom_bar(stat = "identity", position = "fill", color = "black") +
