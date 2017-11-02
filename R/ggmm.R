@@ -38,7 +38,7 @@ ggmm <- function(df,
   plot_return <- mm_plot(plot_set)
 
   plot_return <- set_alpha(df, plot_return, a_q)
-  print(add_text)
+
   if (!is.na(add_text)) {
     plot_set$text <- make_text_vec(plot_set, add_text, round_text)
     plot_set$freq <- calculate_coordinates(plot_return)
@@ -80,7 +80,10 @@ mm_plot <- function(plot_set) {
     theme(
       axis.text.x  = element_blank(),
       axis.ticks.x = element_blank(),
-      panel.spacing = unit(0, "lines")
+      panel.spacing = unit(0, "lines"),
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      panel.background = element_blank()
     ) +
     guides(alpha = FALSE) +
     labs(fill = quo_name(y_q)) +
