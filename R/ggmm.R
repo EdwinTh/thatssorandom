@@ -76,14 +76,16 @@ mm_plot <- function(plot_set, x_q, y_q) {
   plot_set %>%
     ggplot(aes(x_cat, freq, width = y_cnt, fill = y_cat, alpha = alpha_ind)) +
     geom_bar(stat = "identity", position = "fill", color = "black") +
-    facet_grid(~x_cat, scales = "free_x", space = "free_x") +
+    facet_grid(~x_cat, scales = "free_x", space = "free_x",
+               switch = "x") +
     theme(
       axis.text.x  = element_blank(),
       axis.ticks.x = element_blank(),
-      panel.spacing = unit(0, "lines"),
+      panel.spacing = unit(0.1, "lines"),
       panel.grid.major = element_blank(),
       panel.grid.minor = element_blank(),
-      panel.background = element_blank()
+      panel.background = element_blank(),
+      strip.background = element_blank()
     ) +
     guides(alpha = FALSE) +
     labs(fill = quo_name(y_q)) +
