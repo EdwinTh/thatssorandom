@@ -29,31 +29,31 @@ gg_outlier_bin <- function(x,
                            fill = "cornflowerblue",
                            fill_outlier_bins = "forestgreen",
                            binwidth = NULL) {
-
+  
   printing_min_max <- x %>% summarise_(sprintf("round(min(%s, na.rm = TRUE), 1)", var_name),
                                        sprintf("round(max(%s, na.rm = TRUE), 1)", var_name))
-
+  
   ceiling_filter <- ifelse(!is.na(cut_off_ceiling),
                            sprintf("%s < %f", var_name, cut_off_ceiling),
-                           "1 == 1")
+                           "1 == 1") 
   floor_filter   <- ifelse(!is.na(cut_off_floor),
                            sprintf("%s > %f", var_name, cut_off_floor),
                            "1 == 1")
-
-  x_regular <- x %>% filter_(ceiling_filter, floor_filter) %>%
+  
+  x_regular <- x %>% filter_(ceiling_filter, floor_filter) %>% 
     select_(var_name)
-
+  
   x_to_roll_ceiling <- x %>% filter_(
     sprintf("%s >= %f", var_name, cut_off_ceiling)) %>% select_(var_name)
   if (!is.na(cut_off_ceiling)) x_to_roll_ceiling[, 1] <- cut_off_ceiling
-
+  
   x_to_roll_floor <- x %>% filter_(
     sprintf("%s <= %f", var_name, cut_off_floor)) %>% select_(var_name)
   if (!is.na(cut_off_floor)) x_to_roll_floor[, 1] <- cut_off_floor
-
+  
   plot_obj <- ggplot(x_regular, aes_string(var_name)) +
     geom_histogram(col = col, fill = fill, binwidth = binwidth)
-
+  
   if (!is.na(cut_off_ceiling)) {
     ticks_for_ceiling <- update_tickmarks_ceiling(plot_obj, cut_off_ceiling,
                                                   printing_min_max[1,2])
@@ -63,26 +63,26 @@ gg_outlier_bin <- function(x,
       scale_x_continuous(breaks = ticks_for_ceiling$tick_positions,
                          labels = ticks_for_ceiling$tick_labels)
   }
-
+  
   if (!is.na(cut_off_floor)) {
     ticks_for_floor <- update_tickmarks_floor(plot_obj, cut_off_floor,
                                               printing_min_max[1,1])
     plot_obj <- plot_obj +
-      geom_histogram(data = x_to_roll_floor, fill = fill_outlier_bins,
+      geom_histogram(data = x_to_roll_floor, fill = fill_outlier_bins, 
                      col = col, binwidth = binwidth) +
       scale_x_continuous(breaks = ticks_for_floor$tick_positions,
                          labels = ticks_for_floor$tick_labels)
   }
-
+  
   return(plot_obj)
 }
 
 
-update_tickmarks_ceiling <- function(gg_obj,
-                                     co,
+update_tickmarks_ceiling <- function(gg_obj, 
+                                     co, 
                                      max_print) {
   ranges <- suppressMessages(
-    ggplot_build(gg_obj)$layout$panel_ranges[[1]])
+    ggplot_build(gg_obj)$layout$panel_params[[1]])
   label_to_add <- sprintf("(%s , %s)", round(co, 1), max_print)
   tick_positions <- ranges$x.major_source
   tick_labels    <- ranges$x.labels
@@ -100,11 +100,11 @@ overlap_ceiling <- function(positions, cut_off) {
   (cut_off - positions[n]) / ticks_dif < 0.25
 }
 
-update_tickmarks_floor <- function(gg_obj,
-                                   co,
+update_tickmarks_floor <- function(gg_obj, 
+                                   co, 
                                    min_print) {
   ranges <- suppressMessages(
-    ggplot_build(gg_obj)$layout$panel_ranges[[1]])
+    ggplot_build(gg_obj)$layout$panel_params[[1]])
   label_to_add <- sprintf("(%s , %s)", min_print, round(co, 1))
   tick_positions <- ranges$x.major_source
   tick_labels    <- ranges$x.labels
